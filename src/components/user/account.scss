@@ -1,0 +1,95 @@
+#account {
+  width: 100%;
+  height: 100%;
+  button {
+    width: 250px;
+  }
+  a {
+    text-decoration: none;
+  }
+  .account_info-1 {
+    padding: 2rem;
+    .tg {
+      table-layout: fixed;
+      width: 80%;
+      height: 70%;
+      margin: 0 auto;
+      text-align: justify;
+      margin-top: 2rem;
+      td {
+        width: 25%;
+      }
+      .tg-855q {
+        p {
+          border: 1.5px solid rgb(176, 174, 174);
+          padding: 1rem 0 1rem 0.4rem;
+          border-radius: 0.4rem;
+        }
+      }
+    }
+  }
+
+  .account_info-2 {
+    padding: 2rem;
+    .--account-img {
+      margin: 0 auto;
+      height: 300px;
+      width: 300px;
+      //   border-radius: 50%;
+      //   background-color: #dccfec;
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        object-fit: fill;
+      }
+    }
+    .edit-btn {
+      display: flex;
+      justify-content: center;
+      button {
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #account {
+    height: max-content !important;
+    display: flex !important;
+    flex-direction: column;
+    .account_info-2 {
+      order: 1 !important;
+    }
+    .account_info-1 {
+      order: 2 !important;
+      .tg {
+        table-layout: fixed;
+        width: 100%;
+        height: 70%;
+        margin: 0 auto;
+        text-align: justify;
+        margin-top: 2rem;
+        td {
+          width: 45%;
+        }
+        .tg-855q {
+          p {
+            border: 1.5px solid rgb(176, 174, 174);
+            padding: 1rem 0 1rem 0.4rem;
+            border-radius: 0.4rem;
+            font-size: 0.7rem !important;
+          }
+        }
+      }
+
+      .acc_btns {
+        display: flex;
+        width: max-content !important;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+    }
+  }
+}

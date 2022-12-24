@@ -1,0 +1,26 @@
+.cart_item{
+    a{
+        text-decoration: none;
+    }
+    display: flex;
+    img{
+        width: 5rem;
+        padding: 1rem;
+        margin-right: 1rem;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .cart_item{
+        img{
+            padding: 0;
+            margin-right: 0.4rem;
+            width: 2rem;
+            height: 2rem;
+        }
+        h6{
+            font-size: 1rem;
+        }
+    }
+}

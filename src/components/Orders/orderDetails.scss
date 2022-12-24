@@ -1,0 +1,42 @@
+.orderDetailsPage{
+    height: 100%;
+    table{
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0.7em;
+        td{
+            width: 50%;
+        }
+    }
+    .shipping{
+        background-color: #cfcfdd;
+        width: 100%;
+        padding: 0.4em;
+        border-radius: 0.4em;
+    }
+    .greenColor{
+        color: green;
+    }
+    .redColor{
+        color: red;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+   #ord_img{
+    width: 1.6rem;
+   }
+}
+
+@media screen and (max-width:800px) {
+    .orderDetailsPage{
+        height: fit-content !important;
+        .top{
+            font-size: 1.2rem;
+        }
+        .orderDetailsContainer,.orderDetailsCartItems {
+            width: 90% !important;
+        }
+    }
+}

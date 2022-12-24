@@ -1,0 +1,12 @@
+.sidebar {
+  z-index: 999;
+  background-color: whitesmoke;
+  height: 100% !important;
+  a {
+    text-decoration: none;
+    color: #333333;
+  }
+  .dashboard_links {
+    padding-left: 1rem;
+  }
+}

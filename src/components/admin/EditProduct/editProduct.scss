@@ -1,0 +1,18 @@
+.create_prod {
+  img {
+    width: 4rem;
+    height: 100%;
+  }
+}
+
+
+@media screen and (max-width:800px) {
+    .create_prod{
+        .MuiGrid-root{
+            width: 90% !important;
+        }
+        .MuiInputBase-root{
+            width: 100%;
+        }
+    }
+}

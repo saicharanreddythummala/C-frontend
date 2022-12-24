@@ -1,0 +1,22 @@
+.edit_user {
+  .edit_user-f {
+    height: 100%;
+  }
+  .MuiGrid-root {
+    width: 70% !important;
+  }
+  .logins {
+    color: #f5f5f5;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .edit_user {
+    .MuiGrid-root {
+      width: 90% !important;
+      .MuiInputBase-root {
+        width: 100%;
+      }
+    }
+  }
+}

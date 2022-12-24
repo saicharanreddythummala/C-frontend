@@ -1,0 +1,62 @@
+.confirm_order_page {
+  h5 {
+    background-color: #cfcfdd;
+    width: 100%;
+    padding: 0.4em 0;
+    border-radius: 0.4em;
+  }
+  img {
+    width: 3rem;
+  }
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+  .confirm_order {
+    .confirmCartItems {
+      .confirmCartItemsContainer {
+        .co_img {
+          padding: 0;
+          background-color: #cfcfdd;
+          border-radius: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .orderSummary {
+    .sub_heads {
+      color: #474747;
+      padding-bottom: 0.5rem;
+    }
+    .sub_info {
+      color: #7a7a7a;
+    }
+  }
+  .logins {
+    color: #f5f5f5;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .confirm_order_page {
+    img{
+        width: 2rem;
+    }
+    .confirm_order {
+      display: block !important;
+      .confirmCartItems, .orderSummary{
+        width: 100%;
+      }
+    }
+    .MuiGrid-root{
+        width: 100%;
+        span, h6{
+            font-size: 0.8rem !important;
+        }
+    }
+  }
+}

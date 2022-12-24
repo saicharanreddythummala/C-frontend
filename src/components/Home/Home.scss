@@ -1,0 +1,64 @@
+#home {
+  .home_display {
+    height: 600px;
+    position: relative;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+    button {
+      position: absolute;
+      top: 70%;
+      left: 42%;
+      background-color: #211a1d;
+      color: white;
+    }
+    button:hover {
+      background-color: azure;
+      color: #211a1d;
+      transition: all 0.5s ease;
+    }
+  }
+  .featured {
+    height: 730px;
+
+    .container {
+      height: 80%;
+    }
+  }
+  .slick-slide > div {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #home {
+    .home_display {
+      height: 480px;
+
+      button {
+        left: 35%;
+      }
+    }
+    .featured {
+      height: 430px;
+
+      .container {
+        height: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #home {
+    .home_display {
+      button {
+        left: 25%;
+      }
+    }
+  }
+}

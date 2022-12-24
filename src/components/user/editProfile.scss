@@ -1,0 +1,62 @@
+#edit_profile{
+    height: 100% !important;
+    .ep_card{
+        width: 50%;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    .logins{
+        color: #f5f5f5;
+        float: inline-end;
+    }
+    #file_input_label {
+        cursor: pointer;
+        border: 1px solid #211a1d;
+        padding: 0.4em 0.2em;
+        border-radius: 0.4rem;
+        color: white;
+        background-color: #211a1d;
+        text-align: center;
+      }
+    [type='file'] {
+        height: 0;
+        overflow: hidden;
+        width: 0;
+      }
+}
+
+@media screen and (max-width: 1200px) {
+    #edit_profile{
+        .ep_card{
+            width: 70%;
+        }
+    
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #edit_profile{
+
+        .ep_card{
+            width: 70%;
+            .--ep_card-body{
+                flex-direction: column;
+                align-items: center;
+                .stacks{
+                    margin: 0 !important;
+                }
+                img{
+                    align-self: center;
+                }
+            }
+        }
+        .buttons{
+            display: flex !important;
+            justify-content: space-evenly;
+        }
+    
+    }
+}
