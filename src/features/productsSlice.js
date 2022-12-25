@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const URL = `https://chocobox-backend.vercel.app/`;
+export const URL = `https://chocobox-backend.vercel.app`;
 
 const config = {
   headers: {
