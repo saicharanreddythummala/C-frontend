@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { URL } from '../../../features/productsSlice';
 
 export default function Payment() {
   const [loading, setLoading] = useState(false);
