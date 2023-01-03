@@ -25,7 +25,7 @@ export default function ConfirmOrder() {
   );
 
   const shippingCharges = subtotal > 1000 ? 0 : 200;
-  const tax = subtotal * 0.18;
+  const tax = Math.floor(subtotal * 0.18);
   const totalPrice = subtotal + tax + shippingCharges;
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
