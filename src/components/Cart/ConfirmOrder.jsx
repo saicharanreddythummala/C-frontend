@@ -106,8 +106,9 @@ export default function ConfirmOrder() {
                 withCredentials: 'include',
               }
             );
+            localStorage.setItem('cartItems', []);
+            localStorage.setItem('shippingInfo', {});
             navigate('/paymentSuccess');
-            console.log(result.data);
           },
           prefill: {
             name: `${user.name}`,
