@@ -6,6 +6,7 @@ import Meta from '../Meta';
 import CheckOutSteps from './CheckOutSteps';
 import './confirmOrder.scss';
 import axios from 'axios';
+import { URL } from '../../features/productsSlice';
 
 export default function ConfirmOrder() {
   const navigate = useNavigate();
@@ -26,6 +27,8 @@ export default function ConfirmOrder() {
   const totalPrice = subtotal + tax + shippingCharges;
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
+  let orderInfo;
+
   const proceedToPayment = async () => {
     const data = {
       subtotal,
@@ -36,18 +39,9 @@ export default function ConfirmOrder() {
 
     sessionStorage.setItem('orderInfo', JSON.stringify(data));
 
+    orderInfo = await JSON.parse(sessionStorage.getItem('orderInfo'));
+
     loadRazorpay();
-  };
-
-  const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
-
-  const order = {
-    shippingInfo,
-    orderItems: cartItems,
-    itemsPrice: orderInfo.subtotal,
-    taxPrice: orderInfo.tax,
-    shippingPrice: orderInfo.shippingCharges,
-    totalPrice: orderInfo.totalPrice,
   };
 
   //razor pay
@@ -61,7 +55,7 @@ export default function ConfirmOrder() {
       try {
         setLoading(true);
         const result = await axios.post(
-          'http://localhost:4000/api/v1/payment/process',
+          `${URL}/api/v1/payment/process`,
           {
             amount: orderInfo.totalPrice + '00',
           },
@@ -77,7 +71,7 @@ export default function ConfirmOrder() {
 
         const {
           data: { key },
-        } = await axios.get('http://localhost:4000/api/v1/razorpayKey', {
+        } = await axios.get(`${URL}/api/v1/razorpayKey`, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -93,7 +87,7 @@ export default function ConfirmOrder() {
           order_id: order_id,
           handler: async function (response) {
             const result = await axios.post(
-              'http://localhost:4000/api/v1/order/new',
+              `${URL}/api/v1/order/new`,
               {
                 shippingInfo,
                 orderItems: cartItems,
