@@ -1,16 +1,18 @@
 import { Button, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import Meta from '../Meta';
 import CheckOutSteps from './CheckOutSteps';
 import './confirmOrder.scss';
 import axios from 'axios';
 import { URL } from '../../features/productsSlice';
+import { clearCart } from '../../features/cartSlice';
 
 export default function ConfirmOrder() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
@@ -108,6 +110,7 @@ export default function ConfirmOrder() {
             );
             localStorage.setItem('cartItems', []);
             localStorage.setItem('shippingInfo', {});
+            dispatch(clearCart());
             navigate('/paymentSuccess');
           },
           prefill: {

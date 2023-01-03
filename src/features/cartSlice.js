@@ -8,7 +8,7 @@ export const addItemsToCart = createAsyncThunk(
   'cart/addItemsToCart',
   async (obj) => {
     const { id, quantity } = obj;
-    const result = await axios.get(`${URL}/api/v1/product/${id}`,config);
+    const result = await axios.get(`${URL}/api/v1/product/${id}`, config);
 
     let payload = {
       product: result.data.product._id,
@@ -51,7 +51,10 @@ const cartSlice = createSlice({
       state.shippingInfo = action.payload;
       localStorage.setItem('shippingInfo', JSON.stringify(action.payload));
     },
- 
+    clearCart(state, action) {
+      state.cartItems = null;
+      state.shippingInfo = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -87,4 +90,5 @@ export const cartRootReducer = {
   cartSlice: cartSlice.reducer,
 };
 
-export const { removeItemFromCart, saveShippingInfo, clearCart } = cartSlice.actions;
+export const { removeItemFromCart, saveShippingInfo, clearCart } =
+  cartSlice.actions;
