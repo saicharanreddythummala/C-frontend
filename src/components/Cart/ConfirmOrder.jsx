@@ -110,7 +110,9 @@ export default function ConfirmOrder() {
             );
             localStorage.setItem('cartItems', []);
             localStorage.setItem('shippingInfo', {});
+            sessionStorage.clear();
             dispatch(clearCart());
+
             navigate('/paymentSuccess');
           },
           prefill: {
