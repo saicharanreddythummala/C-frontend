@@ -52,8 +52,8 @@ const cartSlice = createSlice({
       localStorage.setItem('shippingInfo', JSON.stringify(action.payload));
     },
     clearCart(state, action) {
-      state.cartItems = null;
-      state.shippingInfo = null;
+      state.cartItems = [];
+      state.shippingInfo = {};
     },
   },
   extraReducers: (builder) => {
