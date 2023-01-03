@@ -8,7 +8,6 @@ import Meta from '../Meta';
 import './orderDetails.scss';
 import { ToastContainer, toast } from 'react-toastify';
 
-
 export default function OrderDetails() {
   const { order, error, loading } = useSelector((state) => state.orderDetails);
   const dispatch = useDispatch();
@@ -75,15 +74,13 @@ export default function OrderDetails() {
                     <td>Status:</td>
                     <td
                       className={
-                        order.paymentInfo &&
-                        order.paymentInfo.status === 'succeeded'
+                        order.paymentInfo && order.paymentInfo.status === 'Paid'
                           ? 'greenColor '
                           : 'redColor '
                       }
                     >
                       {' '}
-                      {order.paymentInfo &&
-                      order.paymentInfo.status === 'succeeded'
+                      {order.paymentInfo && order.paymentInfo.status === 'Paid'
                         ? 'PAID'
                         : 'NOT PAID'}
                     </td>
