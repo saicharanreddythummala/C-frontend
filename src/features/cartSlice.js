@@ -32,12 +32,12 @@ const cartSlice = createSlice({
     shippingInfo: localStorage.getItem('shippingInfo')
       ? JSON.parse(localStorage.getItem('shippingInfo'))
       : {
-          // address: '',
-          // city: '',
-          // state: '',
-          // country: '',
-          // pinCode: Number,
-          // phoneNo: Number,
+          address: '',
+          city: '',
+          state: '',
+          country: '',
+          pinCode: Number,
+          phoneNo: Number,
         },
   },
   reducers: {
